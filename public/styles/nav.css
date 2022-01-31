@@ -1,8 +1,10 @@
 nav {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 120px;
+  height: 100px;
+  width: 100%;
   background: #4056A1;
   color: #FFFFFF;
   padding: 0 1.5em;
@@ -11,13 +13,12 @@ nav {
 
 span {
   font-size: 44px;
-  margin-top: 20px;
+  margin-top: 25px;
   font-family: 'Bungee', cursive;
-  align-items: flex-start;
 }
 
 div {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 i {
