@@ -2,12 +2,12 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 400px;
   width: 100%;
   background: orange;
   background-image: url("/images/header-background.png");
   color: white;
-  gap: 0px;
 }
 
 header > div > h2 {
@@ -18,6 +18,6 @@ header > div > h2 {
 header > div > img {
   width: 200px;
   height: 200px;
-  margin-top: 75px;
-  margin-bottom: 0px;
+  margin-top: 95px;
+  margin-bottom: 15px;
 }
