@@ -5,9 +5,9 @@ header {
   justify-content: center;
   height: 400px;
   width: 100%;
-  background: orange;
+  background: #F97423;
   background-image: url("/images/header-background.png");
-  color: white;
+  color: #FFFFF0;
 }
 
 header > div > h2 {
