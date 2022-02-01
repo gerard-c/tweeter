@@ -11,16 +11,16 @@ nav {
   text-align: center;
 }
 
-nav > span {
+nav span {
   font-size: 44px;
   margin-top: 25px;
   font-family: 'Bungee', cursive;
 }
 
-nav > div {
+nav div {
   margin-top: 25px;
 }
 
-#down-arrows {
-  color: red;
+nav div i {
+  color: #FF0000;
 }
