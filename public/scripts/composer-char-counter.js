@@ -7,9 +7,11 @@ $(document).ready(function() {
     $('.counter').html(remainingCharacters);
 
     if (remainingCharacters < 0) {
-      $('.counter').css('color', '#FF0000'); // color counter red when over limit
+      if (!$('.counter').hasClass('over-limit')) {
+        $('.counter').addClass('over-limit'); // color counter red when over limit
+      }
     } else {
-      $('.counter').css('color', 'inherit'); // maintains normal color otherwise
+      $('.counter').removeClass('over-limit'); // maintains normal color otherwise
     }
 
   });
