@@ -10,9 +10,10 @@
     type="text/css" />
 
   <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,25 +50,21 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h1>'TWEETS'</h1>
-    <br>
-    <h2>tweet by user01</h2>
-    <p>HOT TAKE: I think that dogs should be able to vote! None of these are wide enough AHHHHHHHHHH AAAAHHHHHHH AAAAAAAHHHHHHHHHHH AAAAAAAAAHHHHHHHH AAAAAAHHHHHHHHHHH AAAAAHHHHHHHHHHHH</p>
-    <br>
-    <h2>'tweet by user02'</h2>
-    <p>Normalize forgetting your kids at the pool... None of these are wide enough AHHHHHHHHHH AAAAHHHHHHH AAAAAAAHHHHHHHHHHH AAAAAAAAAHHHHHHHH AAAAAAHHHHHHHHHHH AAAAAHHHHHHHHHHHH</p>
-    <br>
-    <h2>tweet by user03</h2>
-    <p>What's that song about grandma getting run over by a reindeer? None of these are wide enough AHHHHHHHHHH AAAAHHHHHHH AAAAAAAHHHHHHHHHHH AAAAAAAAAHHHHHHHH AAAAAAHHHHHHHHHHH AAAAAHHHHHHHHHHHH</p>
-    <br>
-    <h2>'tweet by user04'</h2>
-    <p>*insane belief stated as fact* None of these are wide enough AHHHHHHHHHH AAAAHHHHHHH AAAAAAAHHHHHHHHHHH AAAAAAAAAHHHHHHHH AAAAAAHHHHHHHHHHH AAAAAHHHHHHHHHHHH</p>
-    <br>
-    <h2>tweet by user05</h2>
-    <p>Why can I only see the same six tweets? None of these are wide enough AHHHHHHHHHH AAAAHHHHHHH AAAAAAAHHHHHHHHHHH AAAAAAAAAHHHHHHHH AAAAAAHHHHHHHHHHH AAAAAHHHHHHHHHHHH</p>
-    <br>
-    <h2>'tweet by user06'</h2>
-    <p>I can't believe all six of us follow the same account naming conventions None of these are wide enough AHHHHHHHHHH AAAAHHHHHHH AAAAAAAHHHHHHHHHHH AAAAAAAAAHHHHHHHH AAAAAAHHHHHHHHHHH AAAAAHHHHHHHHHHHH</p>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets/" method="POST">
+        <div class="label-div">
+          <label for="tweet-text">What are you humming about?</label>
+        </div>
+        <div class="text-input">
+          <textarea name="text" id="tweet-text" default="Shouldn't the default text go here?"></textarea>
+        </div>
+        <div class="button-area">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
   </main>
 </body>
 
