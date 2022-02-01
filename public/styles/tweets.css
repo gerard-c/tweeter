@@ -1,0 +1,33 @@
+.tweets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.tweet {
+  padding: 20px;
+  margin: 25px 0;
+  border: 3px solid #545149;
+}
+
+.handle {
+  font-weight: bold;
+  color: #C8C8C8
+
+}
+
+.tweet-body {
+  border-bottom: inherit;
+  padding: 20px 0;
+  margin: 15px 5px;
+}
+
+
+
+.tweet-header, .tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
