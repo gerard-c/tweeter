@@ -1,6 +1,10 @@
 $(document).ready(function() {
-  $('.new-tweet form').keypress(function() {
-    const pressedKey = document.getElementById('tweet-text').value;
-    const remainingCharacters = $('.button-area .counter').html();
+  $('.new-tweet form').keyup(function() {
+
+    const newTweetText = document.getElementById('tweet-text').value;
+    let remainingCharacters = $('.button-area .counter').html();
+
+    remainingCharacters = 140 - newTweetText.length;
+    $('.button-area .counter').html(remainingCharacters);
   });
 });
