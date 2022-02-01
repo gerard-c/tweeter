@@ -43,7 +43,7 @@
   </nav>
 
   <!-- Image Header -->
-  <header>
+  <header class="main-header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -60,11 +60,29 @@
       <form action="/tweets/" method="POST">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
-        <div class="button-area">
+        <footer class="counter-area">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
+        </footer>
       </form>
+    </section>
+
+    <section class="tweets">
+      <article class="tweet">
+        <header class="tweet-header">
+          <div class="user">
+            <p>Ronald Jones</p>
+          </div>
+          <p class="handle">@BadTakes</p>
+        </header>
+        <p>HOT TAKE: I think that dogs should be able to vote! I also think that this tweet needs to be longer for testing purposes!</p>
+        <footer>
+          <p>10 days ago</p>
+          <div class="response-icons">
+            <i class="fa-solid fa-flag"></i> <i class="fa-solid fa-heart"></i> <i class="fa-solid fa-retweet"></i>
+          </div>
+        </footer>
+      </article>
     </section>
   </main>
 </body>

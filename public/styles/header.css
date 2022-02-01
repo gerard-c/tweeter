@@ -1,4 +1,4 @@
-header {
+.main-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,12 +10,12 @@ header {
   color: #FFFFF0;
 }
 
-header div h2 {
+.main-header div h2 {
   font-weight: normal;
   margin-top: 0px;
 }
 
-header div img {
+.main-header div img {
   width: 200px;
   height: 200px;
   margin-top: 95px;
