@@ -66,6 +66,17 @@ $(() => { // page must load before anything else happens
   $('form').submit(function(event) {
     event.preventDefault(); // prevent page reload
 
+    const newTweetText = $(this).children('#tweet-text').val();
+
+    // placeholder validation
+    if (newTweetText === '') {
+      alert('You need to write a tweet to post a tweet!');
+      return;
+    } else if (newTweetText.length > 140) {
+      alert('Your tweet must be under 140 characters in length!');
+      return;
+    }
+    
     const tweetQueryString = $(this).serialize();
 
     $.post('/tweets', tweetQueryString)
