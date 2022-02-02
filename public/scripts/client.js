@@ -60,6 +60,7 @@ $(() => { // page must load before anything else happens
   };
 
   const loadTweets = () => {
+    $('.error-text').hide();
     $.ajax('/tweets', { method: 'GET' })
       .then(function(tweets) {
 
@@ -67,6 +68,7 @@ $(() => { // page must load before anything else happens
         renderTweets(tweets);
       });
   };
+
 
   loadTweets();
 
@@ -79,10 +81,19 @@ $(() => { // page must load before anything else happens
 
     // placeholder validation
     if (newTweetText === '') {
-      alert('You need to write a tweet to post a tweet!');
+      $('.error-text').html(' 🛑 Error: You have to enter a tweet to post a tweet! 🛑 ');
+      $('.error-text').slideDown(250, () => {
+        console.log('Error: empty textarea');
+      });
+
       return;
+
     } else if (newTweetText.length > 140) {
-      alert('Your tweet must be under 140 characters in length!');
+      $('.error-text').html(' 🛑 Error: Tweet must be 140 characters or less! 🛑 ');
+      $('.error-text').slideDown(250, () => {
+        console.log('Error: over character limit');
+      });
+
       return;
     }
 
