@@ -60,16 +60,16 @@ $(() => { // page must load before anything else happens
   };
 
   const loadTweets = () => {
-    $('.error-text').hide();
     $.ajax('/tweets', { method: 'GET' })
-      .then(function(tweets) {
-
-        console.log('Success: ', tweets);
-        renderTweets(tweets);
-      });
+    .then(function(tweets) {
+      
+      console.log('Success: ', tweets);
+      renderTweets(tweets);
+    });
   };
-
-
+  
+  
+  $('.error-text').hide();
   loadTweets();
 
   $('form').submit(function(event) {
@@ -102,6 +102,7 @@ $(() => { // page must load before anything else happens
     $.post('/tweets', tweetQueryString)
       .done(function() {
         console.log('Success: ', tweetQueryString);
+        $('.error-text').slideUp(250, () => {});
         $('#tweet-text').val('');
         $('.counter').html(140);
         loadTweets();
