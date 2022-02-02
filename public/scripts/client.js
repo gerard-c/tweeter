@@ -72,18 +72,24 @@ const createTweetElement = (tweetObj) => {
 };
 
 const renderTweets = (tweetArray) => {
-  $(document).ready(function() { // doesnt do anything until the page is loaded
-
     for (const tweet of tweetArray) { //iterates through multiple tweets
       $('.tweets').append(createTweetElement(tweet)); // adds tweets to page
     }
-  });
 };
 
 $(function() {
   $('form').submit(function(event) {
     event.preventDefault();
+
+    const tweetQueryString = $(this).serialize();
+
+    $.post('/tweets', tweetQueryString)
+    .done(function() {
+      console.log('Success:', tweetQueryString);
+    });
   });
 });
 
-renderTweets(data);
+$(function() {
+  renderTweets(data);
+});
