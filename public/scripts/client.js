@@ -1,9 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+// test data
 const data = [
   {
     "user": {
@@ -32,14 +27,16 @@ const data = [
 
 const createTweetElement = (tweetObj) => {
 
+  // variables to be reassigned using tweet data
   let name = null;
   let avatar = null;
   let handle = null;
   let tweet = null;
   let timestamp = null;
 
+  // data from objects moved to [key, value] nested arrays for simpler iteration
   const dataArrays = Object.entries(tweetObj);
-  for (const array of dataArrays) {
+  for (const array of dataArrays) { // tweet data assigned to appropriate variables
     if (array[0] === 'user') {
       name = array[1].name;
       avatar = array[1].avatars;
@@ -47,10 +44,13 @@ const createTweetElement = (tweetObj) => {
     } else if (array[0] === 'content') {
       tweet = array[1].text;
     } else {
+
+      // timeago linked on HTML page; converts "created_at" data to be human readable and refer to present (x years/months/days ago)
       timestamp = timeago.format(array[1]);
     }
   }
 
+  // HTML data recognized by tweets.css
   return `
   <article class="tweet">
     <header>
@@ -71,9 +71,10 @@ const createTweetElement = (tweetObj) => {
 };
 
 const renderTweets = (tweetArray) => {
-  $(document).ready(function() {
-    for (const tweet of tweetArray) {
-      $('.tweets').append(createTweetElement(tweet));
+  $(document).ready(function() { // doesnt do anything until the page is loaded
+
+    for (const tweet of tweetArray) { //iterates through multiple tweets
+      $('.tweets').append(createTweetElement(tweet)); // adds tweets to page
     }
   });
 };

@@ -10,6 +10,7 @@ $(document).ready(function() {
       if (!$('.counter').hasClass('over-limit')) {
         $('.counter').addClass('over-limit'); // color counter red when over limit
       }
+      
     } else {
       $('.counter').removeClass('over-limit'); // maintains normal color otherwise
     }
