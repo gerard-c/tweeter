@@ -68,9 +68,21 @@ $(() => { // page must load before anything else happens
     });
   };
   
-  
+  let formHidden = false;
   $('.error-text').hide();
   loadTweets();
+
+  $('#toggle-form').on('click', function() {
+    if (!formHidden) {
+      $('.new-tweet').slideUp(250, () => {
+        formHidden = true;
+      })
+    } else {
+      $('.new-tweet').slideDown(250, () => {
+        formHidden = false;
+      })
+    }
+  })
 
   $('form').submit(function(event) {
     event.preventDefault(); // prevent page reload

@@ -20,7 +20,13 @@ nav span {
   font-family: 'Bungee', cursive;
 }
 
+.nav-buttons p {
+  margin: 0;
+}
+
 .nav-buttons {
+  display: flex;
+  flex-direction: column;
   margin-top: 25px;
 }
 
@@ -34,5 +40,5 @@ nav span {
 
 @keyframes bounce {
   50%   {transform: translateY(40%);}
-  100%  {transform: translateY(0%)}
+  100%  {transform: translateY(0%);}
 }
