@@ -20,11 +20,11 @@ nav span {
   font-family: 'Bungee', cursive;
 }
 
-.nav-buttons p {
+.nav-tools p {
   margin: 0;
 }
 
-.nav-buttons {
+.nav-tools {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
@@ -34,7 +34,7 @@ nav span {
   color: #FF0000;
 }
 
-.nav-buttons:hover #toggle-form {
+.nav-tools:hover #toggle-form {
   animation: bounce 1.5s infinite ease-in-out;
 }
 
