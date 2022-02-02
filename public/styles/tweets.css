@@ -15,14 +15,14 @@
   box-shadow: 8px 8px #C8C8C8;
 }
 
-.tweet header div {
-  display: flex;
-}
-
 .handle {
   font-weight: bold;
   color: #C8C8C8;
   margin-right: 15px;
+}
+
+.tweet header div {
+  display: flex;
 }
 
 .tweet header div img {
@@ -34,14 +34,20 @@
 .tweet-body {
   border-bottom: inherit;
   font-weight: bold;
-  padding: 20px;
-  padding-bottom: 35px;
+  padding: 20px 20px 35px;
   margin: 15px 0;
 }
 
+.tweet header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .tweet footer {
+  display: flex;
+  justify-content: space-between;
   font-size: 14px;
-  padding: 0px 15px 10px 15px;
+  padding: 0px 15px 10px;
 }
 
 .tweet footer p {
@@ -56,11 +62,6 @@
   width: 60px;
 }
 
-.fa-flag:hover, .fa-heart:hover, .fa-retweet:hover {
+.fa-flag, .fa-heart, .fa-retweet:hover {
   color: #E59915;
-}
-
-.tweet header, .tweet footer {
-  display: flex;
-  justify-content: space-between;
 }
