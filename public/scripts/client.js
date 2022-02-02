@@ -4,17 +4,30 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
   },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense, donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+];
 
 
 const createTweetElement = (tweetObj) => {
@@ -31,8 +44,7 @@ const createTweetElement = (tweetObj) => {
       name = array[1].name;
       avatar = array[1].avatars;
       handle = array[1].handle;
-    }
-    else if (array[0] === 'content') {
+    } else if (array[0] === 'content') {
       tweet = array[1].text;
     } else {
       timestamp = timeago.format(array[1]);
@@ -58,8 +70,12 @@ const createTweetElement = (tweetObj) => {
   </article>`;
 };
 
-const $tweet = createTweetElement(tweetData);
+const renderTweets = (tweetArray) => {
+  $(document).ready(function() {
+    for (const tweet of tweetArray) {
+      $('.tweets').append(createTweetElement(tweet));
+    }
+  });
+};
 
-$(document).ready(function() {
-  $('.tweets').append($tweet);
-});
+renderTweets(data);
