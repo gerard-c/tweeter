@@ -74,9 +74,9 @@ $(() => { // page must load before anything else happens
 
   $('form').submit(function(event) {
     event.preventDefault(); // prevent page reload
+    
+    $('.error-text').slideUp(250, () => {});
 
-    const hackerTest = $('#tweet-text').text();
-    console.log(hackerTest);
     const newTweetText = $(this).children('#tweet-text').val();
 
     // hidden error HTML element is shown, written on either error
@@ -102,7 +102,6 @@ $(() => { // page must load before anything else happens
     $.post('/tweets', tweetQueryString)
       .done(function() {
         console.log('Success: ', tweetQueryString);
-        $('.error-text').slideUp(250, () => {});
         $('#tweet-text').val('');
         $('.counter').html(140);
         loadTweets();
