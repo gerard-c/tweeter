@@ -35,7 +35,7 @@ const createTweetElement = (tweetObj) => {
     else if (array[0] === 'content') {
       tweet = array[1].text;
     } else {
-      timestamp = array[1];
+      timestamp = timeago.format(array[1]);
     }
   }
 
