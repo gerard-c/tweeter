@@ -36,6 +36,7 @@ const createTweetElement = (tweetObj) => {
 
   // data from objects moved to [key, value] nested arrays for simpler iteration
   const dataArrays = Object.entries(tweetObj);
+
   for (const array of dataArrays) { // tweet data assigned to appropriate variables
     if (array[0] === 'user') {
       name = array[1].name;
@@ -78,5 +79,11 @@ const renderTweets = (tweetArray) => {
     }
   });
 };
+
+$(function() {
+  $('form').submit(function(event) {
+    event.preventDefault();
+  });
+});
 
 renderTweets(data);
