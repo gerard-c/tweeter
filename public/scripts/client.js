@@ -59,5 +59,7 @@ const createTweetElement = (tweetObj) => {
 };
 
 const $tweet = createTweetElement(tweetData);
-console.log($tweet);
 
+$(document).ready(function() {
+  $('.tweets').append($tweet);
+});
