@@ -20,10 +20,19 @@ nav span {
   font-family: 'Bungee', cursive;
 }
 
-nav div {
+.nav-buttons {
   margin-top: 25px;
 }
 
-nav div i {
+#toggle-form {
   color: #FF0000;
+}
+
+.nav-buttons:hover #toggle-form {
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  50%   {transform: translateY(40%);}
+  100%  {transform: translateY(0%)}
 }

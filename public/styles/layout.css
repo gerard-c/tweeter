@@ -36,3 +36,7 @@ main {
    background: inherit;
    margin: 0 5%;
  }
+
+ button:hover, i:hover {
+   cursor: pointer;
+ }
