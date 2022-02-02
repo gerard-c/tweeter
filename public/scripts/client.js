@@ -79,7 +79,7 @@ $(() => { // page must load before anything else happens
     console.log(hackerTest);
     const newTweetText = $(this).children('#tweet-text').val();
 
-    // placeholder validation
+    // hidden error HTML element is shown, written on either error
     if (newTweetText === '') {
       $('.error-text').html(' 🛑 Error: You have to enter a tweet to post a tweet! 🛑 ');
       $('.error-text').slideDown(250, () => {
