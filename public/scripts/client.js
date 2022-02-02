@@ -68,7 +68,8 @@ $(() => { // page must load before anything else happens
     });
   };
   
-  let formHidden = false;
+  let formHidden = true;
+  $('.new-tweet').hide();
   $('.error-text').hide();
   loadTweets();
 
