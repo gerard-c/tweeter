@@ -1,5 +1,12 @@
 $(() => { // page must load before anything else happens
 
+  // used to prevent users from injecting JS via tweet textarea
+  const escape = (str) => {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = (tweetObj) => {
 
     // variables to be reassigned using tweet data
@@ -36,7 +43,7 @@ $(() => { // page must load before anything else happens
         </div>
         <p class="handle">${handle}</p>
       </header>
-      <p class="tweet-body">${tweet}</p>
+      <p class="tweet-body">${escape(tweet)}</p>
       <footer>
         <p>${timestamp}</p>
         <div>
@@ -66,6 +73,8 @@ $(() => { // page must load before anything else happens
   $('form').submit(function(event) {
     event.preventDefault(); // prevent page reload
 
+    const hackerTest = $('#tweet-text').text();
+    console.log(hackerTest);
     const newTweetText = $(this).children('#tweet-text').val();
 
     // placeholder validation
