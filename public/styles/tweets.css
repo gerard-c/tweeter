@@ -9,6 +9,7 @@
   padding: 10px;
   margin: 25px 0;
   border: 3px solid #545149;
+  width: 100%;
 }
 
 .tweet:hover {
@@ -62,6 +63,6 @@
   width: 60px;
 }
 
-.fa-flag, .fa-heart, .fa-retweet:hover {
+.fa-flag:hover, .fa-heart:hover, .fa-retweet:hover {
   color: #E59915;
 }
