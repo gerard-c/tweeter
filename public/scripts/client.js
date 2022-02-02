@@ -76,12 +76,15 @@ $(() => { // page must load before anything else happens
       alert('Your tweet must be under 140 characters in length!');
       return;
     }
-    
+
     const tweetQueryString = $(this).serialize();
 
     $.post('/tweets', tweetQueryString)
       .done(function() {
         console.log('Success: ', tweetQueryString);
+        $('#tweet-text').val('');
+        $('.counter').html(140);
+        loadTweets();
       });
   });
 });
