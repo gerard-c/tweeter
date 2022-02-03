@@ -15,7 +15,15 @@ The files outside of the "public" subdirectory were provided by LHL to simulate 
 
 ## Demo Screenshots
 
+!["Top of the page as seen on desktop"](https://github.com/gerard-c/tweeter/blob/master/docs/desktop-no-scroll.png?raw=true)
 
+!["Scrolled page as seen on desktop"](https://github.com/gerard-c/tweeter/blob/master/docs/desktop-scroll.png?raw=true)
+
+!["Top of the page as seen on mobile"](https://github.com/gerard-c/tweeter/blob/master/docs/mobile-no-scroll.png?raw=true)
+
+!["Scrolled page as seen on mobile"](https://github.com/gerard-c/tweeter/blob/master/docs/mobile-scroll.png?raw=true)
+
+!["Character counter preventing disaster"](https://github.com/gerard-c/tweeter/blob/master/docs/character-counter.png?raw=true)
 
 ## Try it for Yourself!
 
