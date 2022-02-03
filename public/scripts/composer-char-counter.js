@@ -15,21 +15,21 @@ $(() => { // page must load before anything else happens
     } else {
       $('.counter').removeClass('over-limit'); // maintains normal color otherwise
     }
-
   });
 
 
-
+  // checks if window is scrolled down at all and hides/shows buttons appropriately
   $(window).scroll(function() {
-    // checks if window is scrolled down at all and hides/shows buttons appropriately
     if ($(this).scrollTop()) {
       $('.scroll-up').fadeIn();
       $('.nav-tools').fadeOut();
+
     } else {
       $('.scroll-up').fadeOut();
       $('.nav-tools').fadeIn();
     }
   });
+
 
   // clicking button will scroll all the way up and show the "new tweet" UI
   $('.scroll-up').on('click', function() {
