@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(() => { // page must load before anything else happens
+
   $('form').keyup(function() { // updates counter every time user lets go of pressed key
 
     const newTweetText = $(this).find('#tweet-text').val();
@@ -15,5 +16,24 @@ $(document).ready(function() {
       $('.counter').removeClass('over-limit'); // maintains normal color otherwise
     }
 
+  });
+
+
+
+  $(window).scroll(function() {
+    // checks if window is scrolled down at all and hides/shows buttons appropriately
+    if ($(this).scrollTop()) {
+      $('.scroll-up').fadeIn();
+      $('.nav-tools').fadeOut();
+    } else {
+      $('.scroll-up').fadeOut();
+      $('.nav-tools').fadeIn();
+    }
+  });
+
+  // clicking button will scroll all the way up and show the "new tweet" UI
+  $('.scroll-up').on('click', function() {
+    $('html, body').animate({ scrollTop: 0 }, 500);
+    $('.new-tweet').slideDown(250, function() {});
   });
 });
