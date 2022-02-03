@@ -23,7 +23,10 @@ form {
 }
 
 label {
+  position: absolute;
   font-weight: bold;
+  margin-top: 2px;
+  margin-left: 3px;
 }
 
 textarea {

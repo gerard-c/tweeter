@@ -5,6 +5,12 @@ $(() => { // page must load before anything else happens
     const newTweetText = $(this).find('#tweet-text').val();
     let remainingCharacters = 140 - newTweetText.length; // 140 refers to max characters in a tweet
 
+    if (newTweetText.length) {
+      $('label').hide();
+    } else {
+      $('label').show();
+    }
+
     $('.counter').html(remainingCharacters);
 
     if (remainingCharacters < 0) {
@@ -31,9 +37,8 @@ $(() => { // page must load before anything else happens
   });
 
 
-  // clicking button will scroll all the way up and show the "new tweet" UI
+  // clicking button will scroll all the way up
   $('.scroll-up').on('click', function() {
     $('html, body').animate({ scrollTop: 0 }, 250);
-    $('.new-tweet').slideDown(250, function() {});
   });
 });
