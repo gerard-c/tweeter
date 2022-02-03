@@ -27,18 +27,24 @@ nav span {
 .nav-tools {
   display: flex;
   flex-direction: column;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 #toggle-form {
   color: #FF0000;
-}
-
-.nav-tools:hover #toggle-form {
   animation: bounce 1.5s infinite ease-in-out;
 }
 
 @keyframes bounce {
   50%   {transform: translateY(40%);}
   100%  {transform: translateY(0%);}
+}
+
+ /* Tablet Styles */
+ @media only screen and (max-width: 1023px) {
+   nav {
+     background-image: none;
+     background: transparent;
+   }
+  
 }

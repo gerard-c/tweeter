@@ -34,7 +34,7 @@
 
 .tweet-body {
   border-bottom: inherit;
-  font-weight: bold;
+  font-weight: 600;
   padding: 20px 20px 35px;
   margin: 15px 0;
 }

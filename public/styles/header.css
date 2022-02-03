@@ -1,8 +1,9 @@
-.main-header {
+.hero-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: 400px;
   width: 100%;
   background: #F97423;
@@ -10,14 +11,33 @@
   color: #FFFFF0;
 }
 
-.main-header div h2 {
+.hero-header h2 {
   font-weight: normal;
   margin-top: 0px;
 }
 
-.main-header div img {
+.hero-header img {
   width: 200px;
   height: 200px;
-  margin-top: 95px;
+  margin-top: 90px;
   margin-bottom: 15px;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .hero-header {
+    position: sticky;
+    top: 190px;
+    z-index: 99;
+    height: 325px;
+    width: 60%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 70px;
+  }
+
+  .hero-header img {
+    margin: 5px;
+  }
+
 }
