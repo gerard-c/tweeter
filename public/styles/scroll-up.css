@@ -18,7 +18,3 @@
 .scroll-up:hover {
   border: 3px solid #000000;
 }
-
-button:hover, i:hover {
-  cursor: pointer;
-}
