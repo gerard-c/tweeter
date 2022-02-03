@@ -59,17 +59,29 @@ $(() => { // page must load before anything else happens
   };
   
   // provides renderTweets with tweet data
-  const loadTweets = () => {
-    $.ajax('/tweets', { method: 'GET' })
-    .then(function(tweets) {
-      
-      console.log('Success: ', tweets);
-      renderTweets(tweets);
-    });
+  const loadTweets = (allOrLast) => {
+
+    if (allOrLast === 'all') {
+      $.ajax('/tweets', { method: 'GET' })
+      .then(function(tweets) {
+        
+        console.log('Success: ', tweets);
+        renderTweets(tweets);
+      });
+    }
+
+    if (allOrLast === 'last') {
+      $.ajax('/tweets', { method: 'GET' })
+      .then(function(tweets) {
+        
+        console.log('Success: ', tweets[tweets.length - 1]);
+        renderTweets([tweets[tweets.length - 1]]);
+      });
+    }
   };
 
   // populates page on load (placeholder?)
-  loadTweets();
+  loadTweets('all');
 
   // hides/shows "new tweet" area
   $('#toggle-form').on('click', function() {
@@ -88,7 +100,7 @@ $(() => { // page must load before anything else happens
     const newTweetText = $(this).children('#tweet-text').val(); // data from textarea
 
     // hidden error HTML element is written, shown on either error
-    if (newTweetText === '') {
+    if (!newTweetText) {
       $('.error-text').html(' 🛑 Error: You have to enter a tweet to post a tweet! 🛑 ');
       $('.error-text').slideDown(250, () => {
         console.log('Error: empty textarea');
@@ -114,7 +126,7 @@ $(() => { // page must load before anything else happens
         console.log('Success: ', tweetQueryString);
         $('#tweet-text').val('');
         $('.counter').html(140);
-        loadTweets();
+        loadTweets('last');
       });
   });  
 });

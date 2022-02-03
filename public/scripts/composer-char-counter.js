@@ -33,7 +33,7 @@ $(() => { // page must load before anything else happens
 
   // clicking button will scroll all the way up and show the "new tweet" UI
   $('.scroll-up').on('click', function() {
-    $('html, body').animate({ scrollTop: 0 }, 500);
+    $('html, body').animate({ scrollTop: 0 }, 250);
     $('.new-tweet').slideDown(250, function() {});
   });
 });
